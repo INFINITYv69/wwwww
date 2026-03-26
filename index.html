@@ -2,16 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Next-generation AI-powered vehicle infotainment ecosystem simulation.">
-    <title>NexusOS | Infotainment System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NexusOS Infotainment</title>
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-mode">
@@ -19,234 +15,230 @@
         <div class="glow-orb orb-1"></div>
         <div class="glow-orb orb-2"></div>
         <div class="glow-orb orb-3"></div>
-        <div class="grid-overlay"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="glass-navbar">
-        <div class="nav-brand">
-            <span class="logo-icon"><i class="fa-solid fa-microchip"></i></span>
-            <span class="logo-text">Nexus<span class="accent-text">OS</span></span>
+    <!-- Top Bar -->
+    <header class="top-bar glass-panel">
+        <div class="top-left">
+            <span class="user-profile"><i class="fa-solid fa-user-astronaut"></i> Alex's Model X</span>
+            <span class="lock-status"><i class="fa-solid fa-lock"></i></span>
         </div>
-        <div class="nav-links">
-            <a href="#hero" class="nav-item">System</a>
-            <a href="#features" class="nav-item">Features</a>
-            <a href="#demo" class="nav-item">Interface</a>
-            <a href="#tech" class="nav-item">Core Tech</a>
-        </div>
-        <div class="nav-controls">
+        <div class="top-center">
             <span class="sys-time" id="system-time">00:00</span>
-            <button class="icon-btn"><i class="fa-solid fa-moon"></i></button>
-            <button class="icon-btn ai-toggle" id="assistant-toggle"><i class="fa-solid fa-robot"></i></button>
         </div>
-    </nav>
+        <div class="top-right">
+            <span class="weather"><i class="fa-solid fa-cloud-sun"></i> 72°F</span>
+            <span class="signal"><i class="fa-solid fa-signal"></i> 5G</span>
+            <span class="battery"><i class="fa-solid fa-battery-three-quarters"></i> 78%</span>
+        </div>
+    </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-title">The Future of <br><span class="accent-glow">Driving Intelligence</span></h1>
-                <p class="hero-subtitle">Control Everything. Experience Anything.</p>
-                <div class="hero-cta-group">
-                    <button class="btn btn-primary">Explore System <i class="fa-solid fa-arrow-right"></i></button>
-                    <button class="btn btn-secondary">Watch Demo <i class="fa-solid fa-play"></i></button>
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Left Panel: Navigation -->
+        <section class="panel nav-panel glass-panel">
+            <div class="map-container">
+                <div class="map-overlay-top">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Navigate to...">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-visual">
-                <div class="dashboard-mockup glass-panel holographic">
-                    <div class="mockup-header">
-                        <span>Drive Mode: ACTIVE</span>
-                        <span>100% Battery</span>
+                
+                <div class="route-info glass-panel">
+                    <div class="next-turn">
+                        <i class="fa-solid fa-arrow-turn-right"></i>
+                        <span>350 ft</span>
                     </div>
-                    <div class="mockup-body">
-                        <div class="speedometer">
-                            <svg viewBox="0 0 100 50">
-                                <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" class="speed-track" />
-                                <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" class="speed-fill" />
-                            </svg>
-                            <div class="speed-value">124<span class="unit">km/h</span></div>
-                        </div>
-                        <div class="car-3d-placeholder">
-                            <i class="fa-solid fa-car-side"></i>
-                        </div>
-                    </div>
+                    <div class="street-name">Cyber Avenue</div>
+                </div>
+
+                <div class="trip-stats glass-panel">
+                    <div class="eta">14 min</div>
+                    <div class="distance">8.2 mi</div>
+                    <div class="arrival-time">11:24 PM</div>
+                </div>
+                
+                <div class="car-marker">
+                    <div class="pulse-ring"></div>
+                    <i class="fa-solid fa-location-arrow"></i>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section id="features" class="features-section">
-            <div class="section-header">
-                <h2 class="section-title">Core Modules</h2>
-                <div class="title-line"></div>
-            </div>
-            <div class="features-grid">
-                <!-- Cards will be populated dynamically or statically -->
-                <div class="feature-card glass-panel">
-                    <div class="card-icon"><i class="fa-solid fa-microphone-lines"></i></div>
-                    <h3>AI Voice Assistant</h3>
-                    <p>Real-time natural language commands with predictive intent recognition.</p>
+        <!-- Right Panel: Dynamic Modules -->
+        <section class="panel modules-panel">
+            
+            <!-- Vehicle Status Module -->
+            <div id="module-vehicle" class="module glass-panel active">
+                <div class="module-header">
+                    <h2>Vehicle Status</h2>
+                    <span class="drive-mode">SPORT</span>
                 </div>
-                <div class="feature-card glass-panel">
-                    <div class="card-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-                    <h3>Smart Navigation</h3>
-                    <p>Live maps with traffic prediction and automated rerouting.</p>
+                <div class="car-3d-view">
+                    <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=800&auto=format&fit=crop" style="width:100%; height:200px; object-fit:cover; border-radius:12px; filter: grayscale(80%) sepia(30%) hue-rotate(180deg) brightness(80%); mix-blend-mode: screen;" alt="Vehicle">
+                    <!-- Overlay markers -->
+                    <div class="tire pos-fl">34 PSI</div>
+                    <div class="tire pos-fr">34 PSI</div>
+                    <div class="tire pos-rl">35 PSI</div>
+                    <div class="tire pos-rr">35 PSI</div>
                 </div>
-                <div class="feature-card glass-panel">
-                    <div class="card-icon"><i class="fa-solid fa-film"></i></div>
-                    <h3>Media Hub</h3>
-                    <p>Seamlessly integrated streaming, gaming, and multi-zone audio.</p>
-                </div>
-                <div class="feature-card glass-panel">
-                    <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <h3>Diagnostics</h3>
-                    <p>Real-time analytics and predictive maintenance alerts.</p>
-                </div>
-                <div class="feature-card glass-panel">
-                    <div class="card-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
-                    <h3>Gesture Control</h3>
-                    <p>Touchless interface using advanced 3D spatial mapping.</p>
-                </div>
-                <div class="feature-card glass-panel">
-                    <div class="card-icon"><i class="fa-solid fa-house-signal"></i></div>
-                    <h3>IoT Integration</h3>
-                    <p>Syncs seamlessly with your smart home ecosystem automatically.</p>
+                <div class="quick-controls">
+                    <button class="qc-btn active"><i class="fa-solid fa-lightbulb"></i> <br>Lights</button>
+                    <button class="qc-btn"><i class="fa-solid fa-door-open"></i> <br>Doors</button>
+                    <button class="qc-btn active"><i class="fa-solid fa-shield-halved"></i> <br>Sentry</button>
+                    <button class="qc-btn"><i class="fa-solid fa-bolt"></i> <br>Charge</button>
                 </div>
             </div>
-        </section>
 
-        <!-- Interactive Demo Section -->
-        <section id="demo" class="demo-section">
-            <div class="section-header">
-                <h2 class="section-title">Interface Simulation</h2>
-                <div class="title-line"></div>
-            </div>
-            <div class="demo-container">
-                <div class="interactive-screen glass-panel">
-                    <div class="screen-tabs">
-                        <button class="tab-btn active" data-target="tab-nav"><i class="fa-solid fa-location-arrow"></i> Nav</button>
-                        <button class="tab-btn" data-target="tab-music"><i class="fa-solid fa-music"></i> Media</button>
-                        <button class="tab-btn" data-target="tab-stats"><i class="fa-solid fa-bolt"></i> Stats</button>
+            <!-- Media Player Module -->
+            <div id="module-media" class="module glass-panel hidden">
+                <div class="module-header">
+                    <h2>Media</h2>
+                    <span class="source"><i class="fa-brands fa-spotify"></i> Spotify</span>
+                </div>
+                <div class="media-content">
+                    <div class="album-art-large">
+                        <i class="fa-solid fa-compact-disc fa-spin"></i>
                     </div>
-                    <div class="screen-content">
-                        <!-- Navigation Tab -->
-                        <div id="tab-nav" class="tab-pane active fade-in">
-                            <div class="map-placeholder">
-                                <div class="nav-overlay">
-                                    <div class="nav-route">To: Cyberpunk City Center</div>
-                                    <div class="nav-eta">14 min | 8.2 km</div>
-                                </div>
-                                <div class="pulse-marker"></div>
-                            </div>
+                    <div class="track-info">
+                        <h3>Midnight City</h3>
+                        <p>M83</p>
+                    </div>
+                    <div class="progress-container">
+                        <span class="time-current">01:24</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 35%;"></div>
                         </div>
-                        <!-- Music Tab -->
-                        <div id="tab-music" class="tab-pane fade-in hidden">
-                            <div class="music-player">
-                                <div class="album-art"><i class="fa-solid fa-compact-disc fa-spin"></i></div>
-                                <div class="track-info">
-                                    <h4>Neon Nights</h4>
-                                    <p>Synthwave Core</p>
-                                </div>
-                                <div class="playback-controls">
-                                    <button><i class="fa-solid fa-backward-step"></i></button>
-                                    <button class="play-btn"><i class="fa-solid fa-pause"></i></button>
-                                    <button><i class="fa-solid fa-forward-step"></i></button>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 45%;"></div>
-                                </div>
-                            </div>
+                        <span class="time-total">04:03</span>
+                    </div>
+                    <div class="playback-controls">
+                        <button class="icon-btn"><i class="fa-solid fa-shuffle"></i></button>
+                        <button class="icon-btn"><i class="fa-solid fa-backward-step"></i></button>
+                        <button class="play-btn"><i class="fa-solid fa-pause"></i></button>
+                        <button class="icon-btn"><i class="fa-solid fa-forward-step"></i></button>
+                        <button class="icon-btn"><i class="fa-solid fa-repeat"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Module -->
+            <div id="module-settings" class="module glass-panel hidden">
+                <div class="module-header">
+                    <h2>Settings</h2>
+                </div>
+                <div class="settings-list">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Display Brightness</h4>
+                            <p>Auto-adjust based on time</p>
                         </div>
-                        <!-- Stats Tab -->
-                        <div id="tab-stats" class="tab-pane fade-in hidden">
-                            <div class="stats-grid">
-                                <div class="stat-item">
-                                    <i class="fa-solid fa-battery-full stat-icon"></i>
-                                    <div class="stat-val">87%</div>
-                                    <div class="stat-label">Range: 412km</div>
-                                </div>
-                                <div class="stat-item">
-                                    <i class="fa-solid fa-temperature-half stat-icon"></i>
-                                    <div class="stat-val">22°C</div>
-                                    <div class="stat-label">Cabin Temp</div>
-                                </div>
-                                <div class="stat-item">
-                                    <i class="fa-solid fa-wind stat-icon"></i>
-                                    <div class="stat-val">34 PSI</div>
-                                    <div class="stat-label">Tire Pressure</div>
-                                </div>
-                                <div class="stat-item">
-                                    <i class="fa-solid fa-shield-halved stat-icon"></i>
-                                    <div class="stat-val">V.2.4</div>
-                                    <div class="stat-label">System Up to Date</div>
-                                </div>
-                            </div>
+                        <input type="range" class="slider" min="0" max="100" value="80">
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Driving Mode</h4>
+                            <p>Current: Sport</p>
+                        </div>
+                        <div class="pill-toggle">
+                            <button>Chill</button>
+                            <button class="active">Sport</button>
+                            <button>Track</button>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Ambient Lighting</h4>
+                        </div>
+                        <div class="color-picker">
+                            <span class="color-dot active" style="background:#00f0ff"></span>
+                            <span class="color-dot" style="background:#7000ff"></span>
+                            <span class="color-dot" style="background:#ff003c"></span>
+                            <span class="color-dot" style="background:#00ff88"></span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Tech Stack Section -->
-        <section id="tech" class="tech-section">
-            <div class="section-header">
-                <h2 class="section-title">Architecture</h2>
-                <div class="title-line"></div>
-            </div>
-            <div class="tech-layers">
-                <div class="tech-card">
-                    <h4>AI + ML Engine</h4>
-                    <p>Real-time neural processing on the edge for zero latency.</p>
-                </div>
-                <div class="tech-card">
-                    <h4>Cloud Connectivity</h4>
-                    <p>5G enabled V2X communication protocol.</p>
-                </div>
-                <div class="tech-card">
-                    <h4>OTA Architecture</h4>
-                    <p>Seamless background updates without interruption.</p>
-                </div>
-                <div class="tech-card">
-                    <h4>Cyber Defense</h4>
-                    <p>Military-grade encryption and isolation layers.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials/Vision -->
-        <section class="vision-section">
-            <div class="vision-content glass-panel">
-                <h2>"Reimagining Mobility Through Intelligence"</h2>
-                <p>Not just a screen, but a sentient copilot designed to merge man and machine.</p>
-            </div>
         </section>
     </main>
 
-    <footer class="glass-footer">
-        <div class="footer-content">
-            <div class="footer-logo">Nexus<span class="accent-text">OS</span></div>
-            <div class="social-links">
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-dribbble"></i></a>
-            </div>
-            <div class="copyright">&copy; 2026 Nexus Mobility Systems. All rights reserved.</div>
+    <!-- Bottom Dock -->
+    <nav class="bottom-dock glass-panel">
+        <!-- Climate Left -->
+        <div class="dock-section temp-control">
+            <button class="icon-btn btn-down"><i class="fa-solid fa-chevron-down"></i></button>
+            <span class="temp-val">68°</span>
+            <button class="icon-btn btn-up"><i class="fa-solid fa-chevron-up"></i></button>
+            <button class="icon-btn seat-heater active"><i class="fa-solid fa-fire"></i></button>
         </div>
-    </footer>
 
-    <!-- Floating AI Chatbot -->
-    <div id="ai-assistant" class="ai-chatbot glass-panel hidden">
-        <div class="chat-header">
-            <span><i class="fa-solid fa-robot"></i> System AI</span>
-            <button id="close-chat" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+        <!-- App Icons -->
+        <div class="app-launcher">
+            <button class="app-icon active" data-target="module-vehicle"><i class="fa-solid fa-car"></i></button>
+            <button class="app-icon" data-target="module-media"><i class="fa-solid fa-music"></i></button>
+            <button class="app-icon" onclick="toggleClimate()"><i class="fa-solid fa-fan"></i></button>
+            <button class="app-icon" data-target="module-settings"><i class="fa-solid fa-gear"></i></button>
         </div>
-        <div class="chat-messages" id="chat-messages">
-            <div class="msg ai-msg">Nexus AI initialized. How can I optimize your drive today?</div>
+
+        <!-- Volume/Climate Right -->
+        <div class="dock-section right-controls">
+            <button class="icon-btn seat-heater"><i class="fa-solid fa-fire"></i></button>
+            <div class="temp-control">
+                <button class="icon-btn btn-down"><i class="fa-solid fa-chevron-down"></i></button>
+                <span class="temp-val">70°</span>
+                <button class="icon-btn btn-up"><i class="fa-solid fa-chevron-up"></i></button>
+            </div>
+            <div class="volume-control">
+                <i class="fa-solid fa-volume-low"></i>
+                <input type="range" class="slider volume-slider" min="0" max="100" value="40">
+            </div>
         </div>
-        <div class="chat-input-area">
-            <input type="text" id="chat-input" placeholder="Give a command...">
-            <button id="send-btn" class="icon-btn"><i class="fa-solid fa-paper-plane"></i></button>
+    </nav>
+
+    <!-- Climate Full Overlay -->
+    <div id="climate-overlay" class="climate-overlay glass-panel hidden">
+        <button class="close-overlay icon-btn" onclick="toggleClimate()"><i class="fa-solid fa-xmark"></i></button>
+        <div class="climate-content">
+            <h2>Climate Control</h2>
+            <div class="climate-main">
+                <div class="climate-vents">
+                    <!-- Visually depict car vents with airflow UI -->
+                    <div class="vent-visuals">
+                        <i class="fa-solid fa-car-side" style="font-size: 8rem; opacity: 0.1;"></i>
+                        <div class="airflow-line airflow-1"></div>
+                        <div class="airflow-line airflow-2"></div>
+                        <div class="airflow-line airflow-3"></div>
+                    </div>
+                </div>
+                <div class="climate-controls">
+                    <div class="fan-speed">
+                        <span>Fan Speed</span>
+                        <input type="range" class="slider" min="1" max="5" value="3">
+                    </div>
+                    <div class="ac-toggles">
+                        <button class="btn ac-btn active">A/C</button>
+                        <button class="btn ac-btn">Auto</button>
+                        <button class="btn ac-btn active">Sync</button>
+                        <button class="btn ac-btn"><i class="fa-solid fa-wind"></i> Defrost</button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <!-- AI Voice Assistant -->
+    <button id="ai-trigger" class="ai-trigger glass-panel">
+        <i class="fa-solid fa-microphone-lines"></i>
+    </button>
+    <div id="ai-overlay" class="ai-overlay hidden">
+        <div class="ai-waves">
+            <div class="wave w1"></div>
+            <div class="wave w2"></div>
+            <div class="wave w3"></div>
+        </div>
+        <div class="ai-text">Listening...</div>
     </div>
 
     <script src="main.js"></script>
